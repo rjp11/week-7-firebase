@@ -1,0 +1,27 @@
+body {
+    background-image: url(../images/darkness.png);
+}
+
+.jumbotron h1 {
+    font-family: 'Faster One', cursive;
+    color: white;
+    margin-bottom: 2px;
+}
+
+.jumbotron h4 {
+    color: white;
+}
+
+.jumbotron {
+    background-image: url(../images/train.jpeg);
+    background-position: 50% 50%;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.background {
+    background-color: rgba(50, 50, 50, 0.7);
+    border: solid black 2px;
+    border-radius: 10px;
+    padding: -25px;
+}
