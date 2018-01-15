@@ -11,10 +11,10 @@ firebase.initializeApp(config);
 var database = firebase.database();
 
 function emptyForm() {
-    $("#employee-name-input").val("");
-    $("#role-input").val("");
-    $("#start-input").val("");
-    $("#rate-input").val("");
+    $("#train-name-input").val("");
+    $("#destination-input").val("");
+    $("#first-train-input").val("");
+    $("#frequency-input").val("");
 };
 
 $("#add-train-btn").on("click", function (event) {
@@ -49,10 +49,15 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey){
     var minutesAway = trainFrequency - timeRemaining;
     var nextArrival = moment().add(minutesAway, "minutes").format("hh:mm");
 
-    $("#train-table > tbody").append("<tr><td>" + trainName + "</td><td>" + trainDestination + "</td><td>" + trainFrequency + "</td><td>" + nextArrival + "</td><td>" + minutesAway + "</td></tr>");
+    $("#train-table > tbody").append("<tr class='hover'><td>" + trainName + "</td><td>" + trainDestination + "</td><td>" + trainFrequency + "</td><td>" + nextArrival + "</td><td>" + minutesAway + "</td>" //<td>" + "<button class='danger hidden-xs'>Edit</button><button class='danger hidden-xs'>Delete</button>" 
+    + "</tr>");
 
 });
 
-setInterval(function() {
-    window.location.reload();
-  }, 60000);
+// $(document).ready(function () {
+//     $(document).on('mouseenter', '.hover', function () {
+//         $(this).find(":button").show();
+//     }).on('mouseleave', '.hover', function () {
+//         $(this).find(":button").hide();
+//     });
+// });
